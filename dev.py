@@ -1,0 +1,85 @@
+#printf("\33[33m");
+#printf("\33[31m");
+#!/bin/python
+
+import os
+import socket
+import platform
+import threading
+import subprocess
+
+print("\t / ____/_  __   _________  __  __   / __ ")
+     / __/ / / / /  / ___/ __ \/ / / /  / / / /
+    / /___/ /_/ /  (__  ) /_/ / /_/ /  / /_/ /
+   /_____/\__,_/  /____/\____/\__,_/   \____/
+
+
+print(" ")
+print("\33[31m *************************************************")
+print("\t BEM-VINDO AO SISTEMA da OPEN SOURCE")
+print("\n Desenvolvedor:UCHIHA HF")
+print(" Desenvolvedor:CaminhanteDasSombras")
+print("\33[31m *************************************************")
+print("\n[00]-Executar o cmatrix")
+print("[01]-Fazer portscan de todas as portas")
+print("[02]-Descobrir o ip do site")
+print("[03]-Descobrir que SO usa?")
+print("[04]-Fazer ataque DOS")
+print("[05]-Fazer enumeração de subdominíos")
+print("[06]-Verificar nossa wordlist")
+print("[07]-Fazer enumeração de serviços do servidor")
+print("[08]-ShellCliente")
+print("[**]-Documentação da ferramenta")
+
+a=input("\n \33[33m Digite o número da ferramenta opcional:");
+if a == "00" or a == "0" :
+	os.system("cmatrix")
+elif a == "01" or a == "1":
+	b=input("Digite o ip ou o dominío do site\n")
+	for porta in range (1,65535):
+                s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                if(s.connect_ex((b,porta))==0):
+                        print("PORTA", porta, "[ABERTA]")
+			#time_start = time.time()
+                        s.close()
+elif a == "02" or a == "2" :
+	host=input("Digite o dominío:\n")
+	print(host, "---->",socket.gethostbyname(host))
+
+elif a == "03" or a == "3" :
+	so=platform.system()
+	print(so)
+elif a == "04" or a == "4" :
+	
+	print("Para usar esta opção digite o comando: python3 DDOS.py")
+
+elif a == "05" or a == "5":
+	print("Para utilizar esta ferramenta deves executar o arquivo new.sh e passar o dominío por argumento, desta maneira:./new.sh exemplo.com.br")
+elif a == "06" or a == "6" :
+	print("Para constatar nossa wordlist podes usar o comando cat LISTA1.txt, e também podes fazer modificações, para fazer modificações podes utilizar o seguinte comando: nano LISTA1.txt")
+elif a == "07" or a == "7" :
+	print("Para usar esta ferramenta use o comando: ./dev.sh e passe o dominio via argumento")
+elif a == "08" or a =="8" :
+	print("Para utilizar esta opção digite o comando: shellCliente.py")
+elif a == "**" or a == "*" :
+	print("___________________________________________")
+	print("01: Esta opção é meio lenta, pois ela faz scan das 65535 portas, ela conecta-se em todas as portas e as que estiverem abertas ela as retirna. Mas as que tiverem fechada ela não as retorna")
+	print("___________________________________________________")
+	print("02:  Esta opção retorna o IP do site, mas sugerimos q verifique se o mesmo utiliza algum farewall que esteja ocultando seu ip")
+	print("___________________________________________________")
+	print("04: Pedimos muito cuidado ao usar esta opção, tenha em conta que cybercrime é crime, portanto apelamos que fazes o bem, para uma sociedade mellhor")
+	#print("_____________________________________________________")
+	print("Esta opção contem uma ferramenta muito poderosa quanto a sua capacidade e numeros de requisições, pois ela faz tantas conexões envuando variás requisições o que pode ser projudicial em ambas partes caso o atacante esteja com uma máquina com pouca capacidade, e do lado do servidor porque estará sobrecarregado e ficará indisponível")
+	print("ATENÇÃO, ESTA FERRAMENTA SÓ FUNCIONA NOS SERVIÇOS HTTP")
+	print("_____________________________________________________")
+	print("05: Esta opção enumera subdominíos, mas este é o um arquivo bash feito em bash script, porém a sua maneira de utilização é diferente!")
+	print("_____________________________________________________")
+	print("06: Nós temos uma bela wordlist, que pode ser utilizado para várias coisas")
+#print("_____________________________________________________")
+	print("_____________________________________________________")
+	print("07: Esta opção faz scan dos serviços rodando no servidores e as versões")
+	print("_____________________________________________________")
+else:
+	print("Lamento mas esta opção ainda não está disponível, as opções disponível são:1,2,3,4,5,6,7,**,8, , caso precisar de ajuda consulte a opção 8") 
+	print("_____________________________________________________")
+
