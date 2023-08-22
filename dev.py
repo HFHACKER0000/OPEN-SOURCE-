@@ -1,5 +1,3 @@
-#printf("\33[33m");
-#printf("\33[31m");
 #!/bin/python
 
 import os
@@ -7,11 +5,6 @@ import socket
 import platform
 import threading
 import subprocess
-
-print("\t / ____/_  __   _________  __  __   / __ ")
-     / __/ / / / /  / ___/ __ \/ / / /  / / / /
-    / /___/ /_/ /  (__  ) /_/ / /_/ /  / /_/ /
-   /_____/\__,_/  /____/\____/\__,_/   \____/
 
 
 print(" ")
